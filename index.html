@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f6f68">
+  <title>宠物连连看</title>
+  <link rel="icon" href="assets/original-icon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/original-icon-180.png?v=10">
+  <link rel="manifest" href="manifest.webmanifest?v=10">
+  <link rel="stylesheet" href="styles.css?v=10">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar" aria-label="游戏状态">
+      <div class="status-line">
+        <div class="status-item">速度：<strong id="speedLabel">Ⅰ</strong></div>
+        <div class="status-item">关卡：<strong id="levelLabel">0</strong></div>
+        <div class="status-item blue" id="modeLabel">不变化</div>
+        <div class="timer-box" aria-label="剩余时间">
+          <div id="timeBar" class="time-bar"></div>
+        </div>
+        <div class="status-item">生命：<strong id="lifeLabel">2</strong></div>
+        <div class="status-item">提示：<strong id="hintCount">4</strong></div>
+        <div class="status-item">得分：<strong id="score">0</strong></div>
+      </div>
+      <div class="sub-status">
+        <h1>宠物连连看</h1>
+        <span>剩余 <strong id="pairsLeft">0</strong> 对</span>
+        <span>最高 <strong id="bestScore">0</strong></span>
+        <span id="timeLeft">05:00</span>
+      </div>
+    </header>
+
+    <section class="controls" aria-label="游戏操作">
+      <div class="difficulty" role="group" aria-label="难度">
+        <button class="seg active" type="button" data-difficulty="easy">初级</button>
+        <button class="seg" type="button" data-difficulty="normal">中级</button>
+        <button class="seg" type="button" data-difficulty="hard">高级</button>
+        <button class="seg" type="button" data-difficulty="expert">特高</button>
+      </div>
+      <div class="actions">
+        <button type="button" id="newGameBtn" title="重新开始">↻ <span>新局</span></button>
+        <button type="button" id="hintBtn" title="显示一对可连接的宠物">💡 <span>提示</span></button>
+        <button type="button" id="shuffleBtn" title="重排剩余宠物">🔀 <span>重排</span></button>
+        <button type="button" id="pauseBtn" title="暂停或继续">⏸ <span>暂停</span></button>
+        <button type="button" id="soundBtn" class="icon-only" title="音效开关" aria-label="音效开关">🔊</button>
+      </div>
+    </section>
+
+    <section class="game-area" aria-label="宠物棋盘">
+      <div id="board" class="board"></div>
+      <svg id="pathLayer" class="path-layer" aria-hidden="true"></svg>
+      <div id="overlay" class="overlay hidden" aria-live="polite">
+        <div class="overlay-panel">
+          <div id="overlayTitle" class="overlay-title">暂停中</div>
+          <div id="overlayText" class="overlay-text">当前已暂停</div>
+          <button type="button" id="overlayBtn">继续</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+  </main>
+
+  <script src="app.js?v=10"></script>
+</body>
+</html>

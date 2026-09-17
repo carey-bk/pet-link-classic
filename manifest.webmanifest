@@ -1,0 +1,22 @@
+{
+  "name": "宠物连连看",
+  "short_name": "宠物连连看",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fffaf0",
+  "theme_color": "#1f6f68",
+  "icons": [
+    {
+      "src": "assets/original-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/original-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
